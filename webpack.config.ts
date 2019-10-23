@@ -6,9 +6,16 @@ const config: Configuration = {
 	mode: 'development',
 	entry: path.resolve(__dirname, 'src/index.ts'),
 	target: 'web',
-	plugins: [new HtmlWebpackPlugin()],
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: path.resolve(__dirname, 'src/index.ejs')
+		})
+	],
 	resolve: {
 		extensions: ['.ts', '.tsx', '.js']
+	},
+	externals: {
+		phaser: 'Phaser'
 	},
 	module: {
 		rules: [
