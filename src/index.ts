@@ -10,7 +10,7 @@ class MainScene extends Phaser.Scene {
 	}
 
 	public create = (): void => {
-		this.add.image(400, 300, 'sky')
+		this.add.image(800, 600, 'sky').setScale(2, 2)
 
 		const particles = this.add.particles('red')
 
@@ -34,8 +34,8 @@ class MainGame extends Phaser.Game {
 	constructor() {
 		super({
 			type: Phaser.AUTO,
-			width: 800,
-			height: 600,
+			width: 1600,
+			height: 1200,
 			physics: {
 				default: 'arcade',
 				arcade: {
